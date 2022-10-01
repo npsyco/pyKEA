@@ -5,14 +5,14 @@
 # 1. Create a list of capital letters in EN alphabet
 from hashlib import new
 import string
-print("TASK ONE")
+print("Ex. 1 - TASK ONE")
 
 alphabet_caps = list(string.ascii_uppercase)
 print(alphabet_caps)
 
 # 2. Create a list of capital letters from the EN alpha,
 # exclude 4 with Unicode point of either 70, 75, 80, 85
-print("TASK TWO")
+print("Ex. 1 - TASK TWO")
 alphabet_caps1 = list(string.ascii_uppercase)
 
 for i in alphabet_caps1:
@@ -35,7 +35,7 @@ print(alphabet_caps1)
 # 3. Create a list of capital letters from the EN alpha, 
 # exclude every second between F & O
 
-print("TASK THREE")
+print("Ex. 1 - TASK THREE")
 alphabet_caps2_list = list(string.ascii_uppercase)
 #print(alphabet_caps2_list)
 def get_alpha_letters(start, stop, step):
@@ -47,7 +47,7 @@ excluded_letters_set = set(excluded_letters)
 print(alphabet_caps2_set - excluded_letters_set)
 
 # Ex 2: Clothes List Comprehension
-
+print("Ex. 2 - TASK 1")
 # 1. From 2 lists, using a list comprehension, create a list containing:
 
 # [(‘Black’, ‘s’), (‘Black’, ‘m’), (‘Black’, ‘l’), (‘Black’, ‘xl’), 
@@ -56,3 +56,17 @@ print(alphabet_caps2_set - excluded_letters_set)
 colors = ['Black', 'White']
 sizes = ['s', 'm', 'l', 'xl']
 
+mix = [(i, j) for i in colors for j in sizes]
+print(mix)
+
+# Ex 2: 
+# 2. If the tuple pair is in the following list, it should not be 
+# added to the comprehension generated list.
+# (black, m), (white, s)
+print("Ex. 2 - TASK")
+
+mix_minus = [(i, j) for i in colors for j in sizes 
+# if i != "Black" and j != "m" or i != "White" and j != "s"]
+# why does above remove (black, s) and (white, m)???
+if i != "Black" and j != "s" or i != "White" and j != "m"]
+print(mix_minus)
