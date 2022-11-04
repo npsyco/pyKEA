@@ -12,6 +12,9 @@ class Dog:
     def __str__(self):
         return f"{self.name} is {self.age} years old"
 
+    
+
+
     # Another instance method
     def speak(self, sound):
         return f"{self.name} says {sound}"
