@@ -1,3 +1,4 @@
+import os
 class Bird:
     def __init__(self, start, dir):
         self.pos = start
@@ -7,8 +8,11 @@ class Bird:
         # methods
         self.methods = {"f":self.fwd, "l":self.left, "r":self.right}
 
+
+
     def fwd(self):
         if self.dir == 1:
+            # [2,2] -> [2,3]
             self.pos[1] = self.pos[1] + 1
         elif self.dir == 2:
             self.pos[0] = self.pos[0] + 1
@@ -28,7 +32,7 @@ class Bird:
             self.dir = 1
         else:
             self.dir += 1
-    
+
     def loose(self):
         return "Bird loses!"
 
@@ -53,7 +57,8 @@ class Board:
         for i in cmd:
             self.bird.methods[i]()
 
-    def display(self):
+    def display(self, ):
+        os.system('cls')
         for i in range(1, 11):
             for j in range(1, 11):
                 if (i, j) == tuple(self.bird.pos):
@@ -74,14 +79,20 @@ class Workspace:
         print("Type 'q' to quit")
 
     def commands(self):
+        self.display()
         l = []
         q = True
-        while q:
-            x = input("Move: ")
-            if x == "q":
-                q == False
-            else:
-                l.append(x)
+        b = Board()
+        # while q:
+        x = input("Move: ")
+        if x == "q":
+            q = False
+        else:
+            l.append(x)
+
+        print(len(l))
+
+
 
         return l
 
@@ -92,14 +103,21 @@ class Game:
         b.display()
 
         w = Workspace()
-        w.display()
+        # w.display()
 
         l = w.commands()
-        b.run(l)
+        while len(l) != 0:
+            b.run(l)
+            b.display()
 
+            if b.bird.pos == b.pig.pos:
+                b.pig.death()
+                print(f"Birds position: {b.bird.pos}")
+                print(f"Pigs position: {b.pig.pos}")
+                break
+            l = w.commands()
         print(self.win(b))
-        print(f"Birds position: {b.bird.pos}")
-        print(f"Pigs position: {b.pig.pos}")
+
 
     def win(self, b):
         if b.bird.pos == b.pig.pos:
@@ -107,5 +125,7 @@ class Game:
         else:
             return b.bird.loose()
 
-g = Game()
-g.main()
+
+if __name__ == '__main__':
+    g = Game()
+    g.main()
