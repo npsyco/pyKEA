@@ -253,10 +253,10 @@ l = [1, 2, 3, 3, 3, 4, 4, 4]
 s = set(l)
 print(s)
 # prints {1, 2, 3, 4} even though the list contains more elements, they
-# are not unique beyond these values.
+# are not unique beyond these four values.
 
-# As you can see, the set s contains only the unique elements from 
-# the list l.
+# As you can see, the set 's' contains only the unique elements from 
+# the list 'l'.
 
 # You can perform various set operations on sets, such as union, 
 # intersection, difference, and symmetric difference. 
