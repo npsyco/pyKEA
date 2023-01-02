@@ -162,6 +162,8 @@ print("\n***TUPLES***\n")
 t = (1, 'a', 3.14, (5, 6))
 print(t)
 
+# prints (1, 'a', 3.14, (5, 6))
+
 # You can access the elements of a tuple using indexing, 
 # just like you would with a list:
 
@@ -224,8 +226,8 @@ print(squares)
 # prints [1, 4, 9, 16, 25]
 
 # In this example, the list comprehension [x**2 for x in numbers] 
-# iterates over the numbers list and creates a new list squares 
-# that contains the squares of each number in numbers.
+# iterates over the 'numbers' list and creates a new list 'squares' 
+# that contains the squares of each number in 'numbers'.
 
 # List comprehensions can also include an optional conditional 
 # expression, known as a predicate, that filters the input values 
@@ -237,9 +239,9 @@ print(even_squares)
 # prints [4, 16, 36, 64, 100]
 
 # In this example, the list comprehension 
-# [x**2 for x in numbers if x % 2 == 0] iterates over the numbers 
-# list and creates a new list even_squares that contains the 
-# squares of only the even numbers in numbers.
+# [x**2 for x in numbers if x % 2 == 0] iterates over the 'numbers' 
+# list and creates a new list 'even_squares' that contains the 
+# squares of only the even numbers in 'numbers'.
 
 # In Python, the variable x is often used as a convention for list 
 # comprehensions, but you can use any variable name that you like. 
@@ -262,7 +264,6 @@ print(squares)  # [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
 # as long as it is a valid Python identifier. Some common choices for 
 # the variable name include x, i, and elem.
 
-
 # List comprehensions are a concise and efficient way to create 
 # lists and perform transformations on sequences of data. 
 # They can often be used as a more readable and efficient alternative 
@@ -280,11 +281,11 @@ for x in numbers:
 print(even_squares)
 
 # This code will produce the same output as the original code: 
-# a list of the squares of the even numbers in the numbers list.
+# a list of the squares of the even numbers in the 'numbers' list.
 
-# The for loop iterates over the elements in the numbers list, 
+# The for loop iterates over the elements in the 'numbers' list, 
 # and the if statement tests each element to see if it is even. 
-# If an element is even, it is squared and added to the even_squares 
+# If an element is even, it is squared and added to the 'even_squares' 
 # list using the append() method.
 
 
