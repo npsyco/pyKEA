@@ -9,9 +9,9 @@
 # feature to a function:
 
 def my_decorator(func):
-    def wrapper(*args, **kwargs): # the wrapper returned is assigned to the 'greet' variable
+    def wrapper(*arguments): # the wrapper returned is assigned to the 'greet' variable
         print("Before calling the decorated function")
-        result = func(*args, **kwargs)
+        result = func(*arguments)
         print("After calling the decorated function")
         return result
     return wrapper
@@ -34,6 +34,9 @@ greet("John")
 # function. The '@my_decorator' syntax is a short way of saying 
 # greet = my_decorator(greet), which assigns the wrapper function 
 # returned by 'my_decorator' to the 'greet' variable.
+
+# By using the unpacking operator (*), we can parse in any object.
+# The **kwargs unpacking operator is used on dictonaries.
 
 # Decorators can be used to add or modify the behavior of functions 
 # or classes in a consistent and reusable way. They are often used 

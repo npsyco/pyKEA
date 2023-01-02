@@ -87,3 +87,88 @@ name = person.name  # Returns "John"
 
 # Set the person's age
 person.age = 31
+
+# Inheritance is a way to create a new class that is a 
+# modified version of an existing class. The new class 
+# is called the subclass and the existing class is the 
+# superclass. The subclass inherits attributes and 
+# behaviors from the superclass and can also have additional 
+# attributes and behaviors of its own.
+
+# Single inheritance is when a subclass inherits from a single 
+# superclass. For example:
+
+class Animal:
+  def __init__(self, name, species):
+    self.name = name
+    self.species = species
+    
+  def make_sound(self):
+    print("Some generic animal sound")
+    
+class Dog(Animal):
+  def __init__(self, name, breed):
+    super().__init__(name, species="Dog")
+    self.breed = breed
+    
+  def make_sound(self):
+    print("Bark")
+
+# In this example, the 'Dog' class is a subclass of the 'Animal' 
+# class and it inherits the name and species attributes and 
+# the make_sound method from the 'Animal' class. The 'Dog' class 
+# also has an additional attribute, 'breed', and it has its own 
+# implementation of the 'make_sound' method.
+
+# Making a dog using the 'Dog' class:
+
+dog = Dog("Vovse", "Border Collie")
+print(dog.name) # Vovse
+print(dog.breed) # Border Collie
+dog.make_sound() # Bark
+
+# Multiple inheritance is when a subclass inherits from multiple 
+# superclasses. For example:
+
+class Animal:
+  def __init__(self, name, species):
+    self.name = name
+    self.species = species
+    
+  def make_sound(self):
+    print("Some generic animal sound")
+    
+class Pet:
+  def __init__(self, name, owner):
+    self.name = name
+    self.owner = owner
+    
+  def set_owner(self, owner):
+    self.owner = owner
+    
+class Dog(Animal, Pet):
+  def __init__(self, name, breed, owner):
+    Animal.__init__(self, name, species="Dog")
+    Pet.__init__(self, name, owner)
+    self.breed = breed
+    
+  def make_sound(self):
+    print("Vov")
+
+# In this example, the Dog class inherits from both 
+# the Animal and Pet classes and it has access to all 
+# of the attributes and methods from both of these classes.
+
+# Creating a Dog/Pet using multiple inheritance:
+
+pet = Dog("Fido", "Golden Retriever", "Christian")
+
+print(pet.name) # Fido
+print(pet.breed) # Golden Retriever
+print(pet.owner) # Christian
+pet.make_sound() # Vov
+
+# Chaning the owner:
+
+pet.set_owner("Claus")
+print(pet.owner) # Claus
