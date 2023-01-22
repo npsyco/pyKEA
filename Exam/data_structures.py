@@ -249,14 +249,14 @@ print(even_squares)
 # list or iterable, and is typically used to make the list 
 # comprehension more readable.
 
-# Here is an example of using the variable i instead of x in a list 
+# Here is an example of using the variable 'i' instead of 'x' in a list 
 # comprehension:
 
 # Create a list of squares using list comprehension
 squares = [i**2 for i in range(1, 11)]
 print(squares)  # [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
 
-# In this example, we use the variable i to represent each element 
+# In this example, we use the variable 'i' to represent each element 
 # in the input list (which is created using the range() function), 
 # and we square each element to create a new list of squares.
 
