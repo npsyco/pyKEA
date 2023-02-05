@@ -1,3 +1,29 @@
+###### ###### ###### ######- PRIMITIVE DATATYPES -###### ###### ###### ######
+
+print("\n***PRIMITIVES***\n")
+
+a1:str = "a"
+print("This is a typecasted string\n" + a1)
+
+a2:float = 0.12
+print("This is a typecasted float")
+print(a2)
+
+a3:int = 3
+print("This is a typecasted integer")
+print(a3)
+
+a4:bool = True
+print("This is a typecasted boolean")
+print(a4)
+
+# list = []
+# dict = {}
+# tuple = ()
+# set = {}
+
+
+input("\nPress to continue to Lists")
 ###### ###### ###### ######- LISTS -###### ###### ###### ######
 
 print("\n***LISTS***\n")
@@ -74,7 +100,7 @@ print(min(l))
 print(max(l))
 
 ###### ###### ###### ######- DICTIONARIES -###### ###### ###### ######
-
+input("\nPress to continue to Dictionaries")
 print("\n***DICTIONARIES***\n")
 
 # In Python, a dictionary is a collection of key-value pairs. 
@@ -122,14 +148,14 @@ print(d)  # {'b': 20, 'c': 30, 'd': 40}
 
 
 ###### ###### ###### ######- TUPLES -###### ###### ###### ######
-
+input("\nPress to continue to Tuples")
 print("\n***TUPLES***\n")
 
 # In Python, a tuple is an immutable sequence type, while a set 
 # is an unordered collection of unique elements. Here are some 
 # key differences between tuples and sets:
 
-# Immutability: As mentioned earlier, tuples are immutable, 
+# Immutability: Tuples are immutable, 
 # which means you cannot modify the values they contain. 
 # Once you create a tuple, you cannot change the values it contains. 
 # In contrast, sets are mutable, which means you can add and remove 
@@ -210,7 +236,7 @@ print(d[(5, 6)])  # 'c'
 
 
 ###### ###### ###### ######- LIST COMPREHENSION -###### ###### ###### ######
-
+input("\nPress to continue to List Comprehension")
 print("\n***LIST COMPREHENSION***\n")
 
 # List comprehension is a concise way to create a list using a 
@@ -290,7 +316,7 @@ print(even_squares)
 
 
 ###### ###### ###### ######- SETS -###### ###### ###### ######
-
+input("\nPress to continue to Sets")
 print("\n***SETS***\n")
 
 # In Python, a set is an unordered collection of unique elements. 
