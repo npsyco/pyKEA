@@ -19,7 +19,7 @@
 
 def generator_example():
   for i in range(5):
-    yield i
+    yield i * i
 
 for i in generator_example():
   print(i)
@@ -31,3 +31,34 @@ for i in generator_example():
 # allow you to iterate over the sequence one value at a time, 
 # which can be more efficient and memory-friendly than storing 
 # the entire sequence in memory at once.
+
+# Note that the generator function only generates values when they 
+# are requested, which makes generators an efficient way to generate 
+# sequences of data. Additionally, once a generator has generated
+# all of its values, it cannot be reused, so you have to create a 
+# new generator if you want to iterate over the sequence again.
+
+# Generators are also useful for generating infinite sequences. 
+# For example, the following generator function generates an infinite 
+# sequence of numbers:
+
+def infinite_sequence():
+    i = 0
+    while True:
+        yield i
+        i += 1
+
+# This generator can be used to generate a specific number of values by 
+# using the itertools.islice function:
+
+import itertools
+from time import sleep
+input("Next?")
+for num in itertools.islice(infinite_sequence(), 50):
+    print(num)
+
+input("DANGER: Overflow could result from this. Continue?")
+
+for i in infinite_sequence():
+   print(i)
+   sleep(0.2)
