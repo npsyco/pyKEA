@@ -1,3 +1,8 @@
+import os
+from colors import bcolors
+import itertools
+from time import sleep
+
 # In Python, a generator is a special type of function that allows 
 # you to iterate over a sequence of values, one at a time, instead 
 # of returning the entire sequence all at once. Generators are used 
@@ -8,14 +13,14 @@
 # code block one step at a time, and return a value only when the 
 # generator is "yielded."
 
-# To create a generator in Python, you use the yield keyword 
-# instead of return. When the generator function is called, it 
-# does not execute the code block immediately. Instead, it returns 
-# a generator object that can be iterated over to execute the code 
-# block one step at a time.
-
-# Here is an example of a simple generator function that generates 
-# a sequence of numbers:
+print(bcolors.OKBLUE + "To create a generator in Python, you use the yield keyword ")
+print("instead of return. When the generator function is called, it ")
+print("does not execute the code block immediately. Instead, it returns ")
+print("a generator object that can be iterated over to execute the code ")
+print("block one step at a time." + bcolors.ENDC)
+input("Next?")
+print(bcolors.OKCYAN + "Here is an example of a simple generator function that generates ")
+print("a sequence of numbers:" + bcolors.ENDC)
 
 def generator_example():
   for i in range(5):
@@ -41,23 +46,23 @@ for i in generator_example():
 # Generators are also useful for generating infinite sequences. 
 # For example, the following generator function generates an infinite 
 # sequence of numbers:
-
+input("Next?")
+os.system("cls")
+print("Infinite sequence:")
 def infinite_sequence():
     i = 0
     while True:
         yield i
         i += 1
 
-# This generator can be used to generate a specific number of values by 
-# using the itertools.islice function:
+print(bcolors.OKCYAN + "This generator can be used to generate a specific number of values by ")
+print("using the itertools.islice function:" + bcolors.ENDC)
 
-import itertools
-from time import sleep
 input("Next?")
 for num in itertools.islice(infinite_sequence(), 50):
     print(num)
 
-input("DANGER: Overflow could result from this. Continue?")
+input(bcolors.WARNING + "DANGER: Overflow could result from this. Continue?" + bcolors.ENDC)
 
 for i in infinite_sequence():
    print(i)
