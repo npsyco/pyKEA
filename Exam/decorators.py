@@ -1,18 +1,26 @@
-# In Python, a decorator is a design pattern that allows you to 
-# modify the functionality of a function or class without changing 
-# its code. Decorators are implemented as callable objects 
-# (functions, classes, or methods) that take another function 
-# or class and extend the behavior of the latter function or 
-# class, without explicitly modifying its code.
+import os
+from colors import bcolors
 
-# Here is an example of how to use a decorator to add a new 
-# feature to a function:
-
+print(bcolors.OKBLUE + "In Python, a decorator is a design pattern that allows you to ")
+print("modify the functionality of a function or class without changing ")
+print("its code. " + bcolors.ENDC)
+input("Next?")
+print(bcolors.OKGREEN + "Decorators are implemented as callable objects ")
+print("(functions, classes, or methods) that take another function ")
+print("or class and extend the behavior of the latter function or ")
+print("class, without explicitly modifying its code." + bcolors.ENDC)
+input("Next?")
+os.system("cls")
+print(bcolors.OKCYAN + "Here is an example of how to use a decorator to add a new ")
+print("feature to a function:" + bcolors.ENDC)
+input("Next?")
 def my_decorator(func):
     def wrapper(*arguments): # the wrapper returned is assigned to the 'greet' variable
-        print("Before calling the decorated function")
+        print(bcolors.WARNING + "Before calling the decorated function" + bcolors.ENDC)
+        input("Next?")
         result = func(*arguments)
-        print("After calling the decorated function")
+        print(bcolors.OKGREEN + "After calling the decorated function" + bcolors.ENDC)
+        input("Next?")
         return result
     return wrapper
 
@@ -20,12 +28,13 @@ def my_decorator(func):
 def greet(name): # name is the greet variable
     print(f"Hello, {name}!")
 
-greet("John")
+user_input = input("Enter your name: ")
+greet(user_input)
 
 # The output of this code would be:
 
 # Before calling the decorated function
-# Hello, John!
+# Hello, <user_input>!
 # After calling the decorated function
 
 # In this example, the 'my_decorator' function is a decorator that 
@@ -51,13 +60,13 @@ greet("John")
 # modify the attributes and methods of the class in any way 
 # that you desire.
 
-# Here is an example of a decorator that adds a new attribute 
-# and a new method to a class:
-
+print(bcolors.OKCYAN + "Here is an example of a decorator that adds a new attribute ")
+print("and a new method to a class:" + bcolors.ENDC)
+input("Next?")
 def class_decorator(cls):
-    cls.new_attribute = "This is a new attribute added by the decorator"
+    cls.new_attribute = bcolors.OKBLUE + "This is a new attribute added by the decorator" + bcolors.ENDC
     def new_method(self):
-        print("This is a new method added by the decorator")
+        print(bcolors.OKGREEN + "This is a new method added by the decorator" + bcolors.ENDC)
     cls.new_method = new_method
     return cls
 
