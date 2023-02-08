@@ -84,10 +84,12 @@ person = Person("John", 30)
 
 # Get the person's name
 name = person.name  # Returns "John"
-
+age = person.age
+print(name, age)
 # Set the person's age
 person.age = 31
-
+age = person.age
+print(age)
 # Inheritance is a way to create a new class that is a 
 # modified version of an existing class. The new class 
 # is called the subclass and the existing class is the 
@@ -168,7 +170,7 @@ print(pet.breed) # Golden Retriever
 print(pet.owner) # Christian
 pet.make_sound() # Vov
 
-# Chaning the owner:
+# Changing the owner:
 
 pet.set_owner("Claus")
 print(pet.owner) # Claus
